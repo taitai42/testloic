@@ -17,7 +17,7 @@ Dans cette api nous conviendront sur les spécificités suivante :
 Pour installer ce projet il vous suffit de créer une base de donnée et de remplacer les champs DB_DATABASE, DB_USER et DB_PASSWD du fichier .env
 puis de lancer les commandes suivante : `composer install` puis `php artisan migrate`
 
-Si vous souhaitez lancer le serveur web vous pouvez utiliser la commande :
+Si vous souhaitez lancer le serveur web vous pouvez utiliser la commande : `php artisan serve`
 (ce n'est pas obligatoire pour lancer les tests)
 #tests
 J'utilise une factory avec des transactions pour chaque tests, ceux ci sont donc indépendant les uns des autres, et chaque données creer pour une suite de test est ensuite détruite de la base de donnée.
