@@ -24,4 +24,11 @@ J'utilise une factory avec des transactions pour chaque tests, ceux ci sont donc
 
  pour lancer les test il suffit de lancer la commande `phpunit` a la racine du projet
 
-
+#endpoints
+| method | route | description |
+| --- | --- | --- |
+| GET | /api/todo/status/{status}| retourne la liste des todos avec le status 1 ou 0 (true ou false) |
+| GET | /api/todo/{id} | retourne la todo correspondant a l'id {id}|
+| POST | /api/todo/ | crée une nouvelle todo et retourne sa représentation |
+| PUT | /api/todo/{id} | édite la todo correspondant a l'id {id} et retourne sa nouvelle représentation
+| DELETE | /api/todo/{id} | supprime la todo correspondant a l'id {id}
