@@ -45,7 +45,7 @@ class TodoTest extends TestCase
     {
         $status = 0;
 
-        factory(\App\Todo::class, 10)->create(['done' => true]);
+        factory(\App\Todo::class, 10)->create(['done' => true]); // create method of factory insert the created records in DB
 
         $this->get("/api/todo/status/$status");
         $result = json_decode($this->response->content(), true);
@@ -55,6 +55,7 @@ class TodoTest extends TestCase
     }
 
     /**
+     * perform the test of the status.
      * @param $status
      */
     public function getByStatus($status, $number = 10)
@@ -99,7 +100,7 @@ class TodoTest extends TestCase
      */
     public function testPostTask()
     {
-        $todo = factory(\App\Todo::class)->make();
+        $todo = factory(\App\Todo::class)->make(); // make method doesn't insert data in DB, it just build the array of them
 
         $this->post('/api/todo', $todo->toArray())->seeStatusCode('201')->seeJsonStructure([
             'id', 'name', 'created_at', 'updated_at', 'done'
